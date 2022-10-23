@@ -37,6 +37,20 @@ void reply(int proc_nr, int result);
 int do_getmcontext(void);
 int do_setmcontext(void);
 
+/***************************************
+ * CS 551 Additions
+ ***************************************/
+
+/* trapcounter.c */
+int trap_counter(void);
+int init_trap_counter(void);
+
+/* msgcounter.c */
+int msg_counter(void);
+int init_msg_counter(void);
+
+/***************************************/
+
 /* misc.c */
 int do_reboot(void);
 int do_sysuname(void);

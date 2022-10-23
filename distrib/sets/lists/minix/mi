@@ -1664,6 +1664,7 @@
 ./usr/include/sys/module.h		minix-sys
 ./usr/include/sys/mount.h		minix-sys
 ./usr/include/sys/mqueue.h		minix-sys
+./usr/include/sys/msgcounter.h		minix-sys
 ./usr/include/sys/msgbuf.h		minix-sys
 ./usr/include/sys/msg.h			minix-sys
 ./usr/include/sys/mtio.h		minix-sys
@@ -1739,6 +1740,7 @@
 ./usr/include/sys/timex.h		minix-sys
 ./usr/include/sys/tls.h			minix-sys
 ./usr/include/sys/trace.h		minix-sys
+./usr/include/sys/trapcounter.h		minix-sys
 ./usr/include/sys/tree.h		minix-sys
 ./usr/include/sys/ttychars.h		minix-sys
 ./usr/include/sys/ttycom.h		minix-sys

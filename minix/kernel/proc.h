@@ -131,6 +131,14 @@ struct proc {
 #if DEBUG_TRACE
   int p_schedules;
 #endif
+
+  /********************************
+   * CS 551 Additions?
+   ********************************/
+  int num_traps;
+  int num_msgs;
+  /********************************/
+
 };
 
 #endif /* __ASSEMBLY__ */

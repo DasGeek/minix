@@ -53,6 +53,20 @@ EXTERN int verboseboot;			/* verbose boot, init'ed in cstart */
 EXTERN int verboseflags;
 #endif
 
+
+/*******************************
+ * CS 551 Additions
+ *******************************/
+#if USE_TRAPCOUNT
+EXTERN int num_traps;
+#endif
+
+#if USE_MSGCOUNT
+EXTERN int num_msgs;
+#endif
+/*******************************/
+
+
 #ifdef USE_APIC
 EXTERN int config_no_apic; /* optionally turn off apic */
 EXTERN int config_apic_timer_x; /* apic timer slowdown factor */

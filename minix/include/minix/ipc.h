@@ -587,6 +587,24 @@ typedef struct {
 } mess_lc_pm_waitpid;
 _ASSERT_MSG_SIZE(mess_lc_pm_waitpid);
 
+
+/*************************************
+ * CS 551 Additions
+ *************************************/
+typedef struct {
+	int num;
+    uint8_t padding[52];
+} mess_pm_trapcount;
+_ASSERT_MSG_SIZE(mess_pm_trapcount);
+
+typedef struct {
+	int num;
+    uint8_t padding[52];
+} mess_pm_msgcount;
+_ASSERT_MSG_SIZE(mess_pm_msgcount);
+/*************************************/
+
+
 typedef struct {
 	cp_grant_id_t grant;
 	vir_bytes tm;			/* struct tm * */
@@ -2203,6 +2221,8 @@ typedef struct {
 		mess_pm_lc_sigset	m_pm_lc_sigset;
 		mess_pm_lc_time		m_pm_lc_time;
 		mess_pm_lc_waitpid	m_pm_lc_waitpid;
+		mess_pm_trapcount	m_pm_trapcount;
+		mess_pm_msgcount	m_pm_msgcount;
 		mess_pm_lexec_exec_new	m_pm_lexec_exec_new;
 		mess_pm_lsys_getepinfo	m_pm_lsys_getepinfo;
 		mess_pm_lsys_getprocnr	m_pm_lsys_getprocnr;

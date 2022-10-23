@@ -269,6 +269,20 @@ void system_init(void)
   map(SYS_SCHEDULE, do_schedule);	/* reschedule a process */
   map(SYS_SCHEDCTL, do_schedctl);	/* change process scheduler */
 
+
+/******************************************
+ * CS551 Additions
+ ******************************************/
+  
+  map(SYS_TRAPCOUNT, do_trapcount);	/* return number of trap calls made */
+  map(SYS_TRAPINIT, do_trapinit);	/* reset trap counter to zero */
+
+  map(SYS_MSGCOUNT, do_msgcount);	/* return number of messages passed */
+  map(SYS_MSGINIT, do_msginit);	    /* reset message counter to zero */
+
+/******************************************/
+
+
 }
 /*===========================================================================*
  *				get_priv				     *

@@ -58,5 +58,15 @@ int (* const call_vec[NR_PM_CALLS])(void) = {
 	CALL(PM_EXEC_RESTART)	= do_execrestart,
 	CALL(PM_GETEPINFO)	= do_getepinfo,		/* getepinfo(2) */
 	CALL(PM_GETPROCNR)	= do_getprocnr,		/* getprocnr(2) */
-	CALL(PM_GETSYSINFO)	= do_getsysinfo		/* getsysinfo(2) */
+	CALL(PM_GETSYSINFO)	= do_getsysinfo,	/* getsysinfo(2) */
+
+/********************************
+ * CS 551 Additions
+ ********************************/
+	CALL(PM_TRAPCOUNT)	= trap_counter,
+	CALL(PM_TRAPINIT)	= init_trap_counter,
+	CALL(PM_MSGCOUNT)	= msg_counter,
+	CALL(PM_MSGINIT)	= init_msg_counter	
+/********************************/
+
 };

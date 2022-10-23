@@ -39,6 +39,10 @@ SRCS+= 	\
 	do_mcontext.c \
 	do_schedule.c \
 	do_schedctl.c \
+	do_trapcount.c \
+	do_trapinit.c \
+	do_msgcount.c \
+	do_msginit.c \
 	do_statectl.c
 
 .if ${MACHINE_ARCH} == "i386"

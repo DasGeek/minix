@@ -59,7 +59,18 @@
 #define PM_GETPROCNR		(PM_BASE + 46)
 #define PM_GETSYSINFO		(PM_BASE + 47)
 
-#define NR_PM_CALLS		48	/* highest number from base plus one */
+
+/**********************************
+ * CS 551 Additions
+ **********************************/
+#define PM_TRAPCOUNT	(PM_BASE + 48)
+#define PM_TRAPINIT		(PM_BASE + 49)
+#define PM_MSGCOUNT		(PM_BASE + 50)
+#define PM_MSGINIT		(PM_BASE + 51)
+/**********************************/
+
+
+#define NR_PM_CALLS		52	/* highest number from base plus one */
 
 /*===========================================================================*
  *				Calls to VFS				     *

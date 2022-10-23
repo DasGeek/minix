@@ -90,6 +90,10 @@ SRCS+=  \
 	sys_vsafecopy.c \
 	sys_vtimer.c \
 	sys_vumap.c \
+	sys_trapcount.c \
+	sys_trapinit.c \
+	sys_msgcount.c \
+	sys_msginit.c \
 	taskcall.c \
 	tickdelay.c \
 	timers.c \
