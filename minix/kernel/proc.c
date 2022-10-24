@@ -420,6 +420,8 @@ static int do_sync_ipc(struct proc * caller_ptr, /* who made the call */
   int src_dst_p;				/* Process slot number */
   char *callname;
 
+  num_traps += 1;
+
   /* Check destination. RECEIVE is the only call that accepts ANY (in addition
    * to a real endpoint). The other calls (SEND, SENDREC, and NOTIFY) require an
    * endpoint to corresponds to a process. In addition, it is necessary to check
@@ -596,6 +598,7 @@ int do_ipc(reg_t r1, reg_t r2, reg_t r3)
   	    /* Process accounting for scheduling */
 	    caller_ptr->p_accounting.ipc_sync++;
 
+
   	    return do_sync_ipc(caller_ptr, call_nr, (endpoint_t) r2,
 			    (message *) r3);
   	}
@@ -615,6 +618,7 @@ int do_ipc(reg_t r1, reg_t r2, reg_t r3)
   	     */
   	    if (msg_size > 16*(NR_TASKS + NR_PROCS))
 	        return EDOM;
+
   	    return mini_senda(caller_ptr, (asynmsg_t *) r3, msg_size);
   	}
   	case MINIX_KERNINFO:
@@ -1038,6 +1042,7 @@ static int mini_receive(struct proc * caller_ptr,
   }
 
 receive_done:
+  num_msgs += 1;
   if (caller_ptr->p_misc_flags & MF_REPLY_PEND)
 	  caller_ptr->p_misc_flags &= ~MF_REPLY_PEND;
   return OK;

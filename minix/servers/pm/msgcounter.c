@@ -42,6 +42,28 @@ int msg_counter()
     return(num_msgs);
 }
 
+/*===========================================================================*
+ *				msg_increment				     *
+ *===========================================================================*/
+int msg_increment()
+{
+    register struct mproc *sending_proc = mp;
+    int num_msgs = 0;
+    int ret = 0;
+    
+    printf("In msg_increment()\n");
+    ret = sys_msgincr(sending_proc->mp_endpoint, &num_msgs);
+
+    /* If the kernel call failed, print a message with the error code. */
+    if (ret != OK)
+    {
+        printf("PM: msg_increment failed [%d].\n", ret);
+        return ret;
+    }
+
+    /* Otherwise, return 0 */
+    return OK;
+}
 
 /*===========================================================================*
  *				init_msg_counter			       	     *

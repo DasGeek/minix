@@ -5,6 +5,7 @@ int sys_msgcount(endpoint_t proc_ep, int *num_msgs)
 	message m;
     int ret;
 
+    printf("In sys_msgcount()\n");
     ret = _kernel_call(SYS_MSGCOUNT, &m);
     if (ret != OK)
     {

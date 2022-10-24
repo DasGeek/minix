@@ -275,9 +275,11 @@ void system_init(void)
  ******************************************/
   
   map(SYS_TRAPCOUNT, do_trapcount);	/* return number of trap calls made */
+  map(SYS_TRAPINCR, do_trapincr);	/* increment number of trap calls */
   map(SYS_TRAPINIT, do_trapinit);	/* reset trap counter to zero */
 
   map(SYS_MSGCOUNT, do_msgcount);	/* return number of messages passed */
+  map(SYS_MSGINCR, do_msgincr);	    /* increment number of messages */
   map(SYS_MSGINIT, do_msginit);	    /* reset message counter to zero */
 
 /******************************************/

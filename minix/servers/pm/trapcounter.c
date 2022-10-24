@@ -40,6 +40,28 @@ int trap_counter()
     return(num_traps);
 }
 
+/*===========================================================================*
+ *				trap_increment				     *
+ *===========================================================================*/
+int trap_increment()
+{
+    register struct mproc *sending_proc = mp;
+    int num_traps = 0;
+    int ret = 0;
+    
+    printf("In trap_increment()\n");
+    ret = sys_trapincr(sending_proc->mp_endpoint, &num_traps);
+
+    /* If the kernel call failed, print a message with the error code. */
+    if (ret != OK)
+    {
+        printf("PM: trap_increment failed [%d].\n", ret);
+        return ret;
+    }
+
+    /* Otherwise, return 0 */
+    return OK;
+}
 
 /*===========================================================================*
  *				init_trap_counter			       	     *
@@ -68,6 +90,6 @@ int init_trap_counter()
     }
 
     /* Otherwise, return 0. */
-    return 0;
+    return OK;
 }
 

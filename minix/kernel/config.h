@@ -51,8 +51,10 @@
  ********************************************/
 
 #define USE_TRAPCOUNT      1	
+#define USE_TRAPINCR       1	
 #define USE_TRAPINIT       1
 #define USE_MSGCOUNT       1
+#define USE_MSGINCR        1	
 #define USE_MSGINIT        1
 
 /********************************************/

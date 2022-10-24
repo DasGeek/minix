@@ -64,8 +64,11 @@ int (* const call_vec[NR_PM_CALLS])(void) = {
  * CS 551 Additions
  ********************************/
 	CALL(PM_TRAPCOUNT)	= trap_counter,
+	CALL(PM_TRAPINCR)	= trap_increment,
 	CALL(PM_TRAPINIT)	= init_trap_counter,
+
 	CALL(PM_MSGCOUNT)	= msg_counter,
+	CALL(PM_MSGINCR)	= msg_increment,
 	CALL(PM_MSGINIT)	= init_msg_counter	
 /********************************/
 

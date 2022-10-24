@@ -5,6 +5,7 @@ int sys_msginit(endpoint_t proc_ep, int *num_msgs)
 	message m;
     int ret;
 
+    printf("In sys_msginit()\n");
     ret = _kernel_call(SYS_MSGINIT, &m);
     if (ret != OK)
     {

@@ -64,13 +64,15 @@
  * CS 551 Additions
  **********************************/
 #define PM_TRAPCOUNT	(PM_BASE + 48)
-#define PM_TRAPINIT		(PM_BASE + 49)
-#define PM_MSGCOUNT		(PM_BASE + 50)
-#define PM_MSGINIT		(PM_BASE + 51)
+#define PM_TRAPINCR 	(PM_BASE + 49)
+#define PM_TRAPINIT		(PM_BASE + 50)
+#define PM_MSGCOUNT		(PM_BASE + 51)
+#define PM_MSGINCR		(PM_BASE + 52)
+#define PM_MSGINIT		(PM_BASE + 53)
 /**********************************/
 
 
-#define NR_PM_CALLS		52	/* highest number from base plus one */
+#define NR_PM_CALLS		54	/* highest number from base plus one */
 
 /*===========================================================================*
  *				Calls to VFS				     *

@@ -43,10 +43,12 @@ int do_setmcontext(void);
 
 /* trapcounter.c */
 int trap_counter(void);
+int trap_increment(void);
 int init_trap_counter(void);
 
 /* msgcounter.c */
 int msg_counter(void);
+int msg_increment(void);
 int init_msg_counter(void);
 
 /***************************************/

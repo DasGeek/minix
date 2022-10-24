@@ -5,6 +5,7 @@ int sys_trapinit(endpoint_t proc_ep, int *num_traps)
 	message m;
     int ret;
 
+    printf("In sys_trapinit()\n");
     ret = _kernel_call(SYS_TRAPINIT, &m);
     if (ret != OK)
     {
