@@ -69,10 +69,12 @@
 #define PM_MSGCOUNT		(PM_BASE + 51)
 #define PM_MSGINCR		(PM_BASE + 52)
 #define PM_MSGINIT		(PM_BASE + 53)
+
+#define PM_NICERTO		(PM_BASE + 54)
+
 /**********************************/
 
-
-#define NR_PM_CALLS		54	/* highest number from base plus one */
+#define NR_PM_CALLS		55	/* highest number from base plus one */
 
 /*===========================================================================*
  *				Calls to VFS				     *

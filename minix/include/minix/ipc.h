@@ -487,6 +487,20 @@ typedef struct {
 } mess_lc_pm_priority;
 _ASSERT_MSG_SIZE(mess_lc_pm_priority);
 
+/*************************************
+ * CS 551 Additions
+ *************************************/
+
+typedef struct {
+	int who;
+	int prio;
+
+	uint8_t padding[48];
+} mess_lc_pm_nicer_to;
+_ASSERT_MSG_SIZE(mess_lc_pm_nicer_to);
+
+/***********************************/
+
 typedef struct {
 	pid_t pid;
 	int req;
@@ -2101,6 +2115,13 @@ typedef struct {
 		mess_lc_pm_itimer	m_lc_pm_itimer;
 		mess_lc_pm_mcontext	m_lc_pm_mcontext;
 		mess_lc_pm_priority	m_lc_pm_priority;
+
+/****************************************************
+ * CS 551 Additions
+ ****************************************************/
+		mess_lc_pm_nicer_to	m_lc_pm_nicer_to;
+/****************************************************/
+
 		mess_lc_pm_ptrace	m_lc_pm_ptrace;
 		mess_lc_pm_reboot	m_lc_pm_reboot;
 		mess_lc_pm_rusage	m_lc_pm_rusage;
@@ -2221,8 +2242,14 @@ typedef struct {
 		mess_pm_lc_sigset	m_pm_lc_sigset;
 		mess_pm_lc_time		m_pm_lc_time;
 		mess_pm_lc_waitpid	m_pm_lc_waitpid;
+
+/**************************************************
+ * CS 551 Additions
+ **************************************************/
 		mess_pm_trapcount	m_pm_trapcount;
 		mess_pm_msgcount	m_pm_msgcount;
+/**************************************************/
+
 		mess_pm_lexec_exec_new	m_pm_lexec_exec_new;
 		mess_pm_lsys_getepinfo	m_pm_lsys_getepinfo;
 		mess_pm_lsys_getprocnr	m_pm_lsys_getprocnr;

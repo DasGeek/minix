@@ -6168,6 +6168,7 @@
 ./usr/tests/minix-posix/test_trapinit		minix-sys
 ./usr/tests/minix-posix/test_msgcount		minix-sys
 ./usr/tests/minix-posix/test_msginit		minix-sys
+./usr/tests/minix-posix/test_nicerto		minix-sys
 ./usr/tests/usr.bin/jot/Atffile		minix-sys	atf
 ./usr/tests/usr.bin/jot/d_basic.out	minix-sys	atf
 ./usr/tests/usr.bin/jot/t_jot		minix-sys	atf

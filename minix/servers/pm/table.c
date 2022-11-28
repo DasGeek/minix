@@ -69,7 +69,9 @@ int (* const call_vec[NR_PM_CALLS])(void) = {
 
 	CALL(PM_MSGCOUNT)	= msg_counter,
 	CALL(PM_MSGINCR)	= msg_increment,
-	CALL(PM_MSGINIT)	= init_msg_counter	
+	CALL(PM_MSGINIT)	= init_msg_counter,
+
+	CALL(PM_NICERTO)	= do_nicer_to
 /********************************/
 
 };
