@@ -213,5 +213,21 @@ int do_padconf(struct proc * caller, message *m_ptr);
 #define do_padconf NULL
 #endif
 
+
+/***********************************
+ * CS 551 additions
+ ***********************************/
+
+int do_trapcount(struct proc * caller, message *m_ptr);
+int do_trapincr(struct proc * caller, message *m_ptr);
+int do_trapinit(struct proc * caller, message *m_ptr);
+
+int do_msgcount(struct proc * caller, message *m_ptr);
+int do_msgincr(struct proc * caller, message *m_ptr);
+int do_msginit(struct proc * caller, message *m_ptr);
+
+/***********************************/
+
+
 #endif	/* SYSTEM_H */
 

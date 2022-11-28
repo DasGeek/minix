@@ -37,6 +37,22 @@ void reply(int proc_nr, int result);
 int do_getmcontext(void);
 int do_setmcontext(void);
 
+/***************************************
+ * CS 551 Additions
+ ***************************************/
+
+/* trapcounter.c */
+int trap_counter(void);
+int trap_increment(void);
+int init_trap_counter(void);
+
+/* msgcounter.c */
+int msg_counter(void);
+int msg_increment(void);
+int init_msg_counter(void);
+
+/***************************************/
+
 /* misc.c */
 int do_reboot(void);
 int do_sysuname(void);
@@ -89,3 +105,11 @@ struct mproc *find_proc(pid_t lpid);
 int nice_to_priority(int nice, unsigned *new_q);
 int pm_isokendpt(int ep, int *proc);
 void tell_vfs(struct mproc *rmp, message *m_ptr);
+
+/***************************************
+ * CS 551 Additions
+ ***************************************/
+
+int do_nicer_to(void);
+
+/***************************************/

@@ -144,6 +144,12 @@ __aconst char *ttyname(int);
 int	 unlink(const char *);
 ssize_t	 write(int, const void *, size_t);
 
+/*
+int	 trap_counter(void);
+void init_trap_counter(void);
+int	 msg_counter(void);
+void init_msg_counter(void);
+*/
 
 /*
  * IEEE Std 1003.2-92, adopted in X/Open Portability Guide Issue 4 and later

@@ -46,6 +46,19 @@
 #define USE_STATECTL       1	/* let a process control its state */
 #define USE_MCONTEXT       1	/* enable getting/setting of machine context */
 
+/********************************************
+ * CS 551 Additions
+ ********************************************/
+
+#define USE_TRAPCOUNT      1	
+#define USE_TRAPINCR       1	
+#define USE_TRAPINIT       1
+#define USE_MSGCOUNT       1
+#define USE_MSGINCR        1	
+#define USE_MSGINIT        1
+
+/********************************************/
+
 #if defined(__arm__)
 #define USE_PADCONF        1	/* configure pinmux */
 #endif /* __arm__ */

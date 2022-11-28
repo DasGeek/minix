@@ -1664,6 +1664,7 @@
 ./usr/include/sys/module.h		minix-sys
 ./usr/include/sys/mount.h		minix-sys
 ./usr/include/sys/mqueue.h		minix-sys
+./usr/include/sys/msgcounter.h		minix-sys
 ./usr/include/sys/msgbuf.h		minix-sys
 ./usr/include/sys/msg.h			minix-sys
 ./usr/include/sys/mtio.h		minix-sys
@@ -1739,6 +1740,7 @@
 ./usr/include/sys/timex.h		minix-sys
 ./usr/include/sys/tls.h			minix-sys
 ./usr/include/sys/trace.h		minix-sys
+./usr/include/sys/trapcounter.h		minix-sys
 ./usr/include/sys/tree.h		minix-sys
 ./usr/include/sys/ttychars.h		minix-sys
 ./usr/include/sys/ttycom.h		minix-sys
@@ -6162,6 +6164,11 @@
 ./usr/tests/minix-posix/testvm.conf	minix-sys
 ./usr/tests/minix-posix/testvnd		minix-sys
 ./usr/tests/minix-posix/tvnd		minix-sys
+./usr/tests/minix-posix/test_trapcount		minix-sys
+./usr/tests/minix-posix/test_trapinit		minix-sys
+./usr/tests/minix-posix/test_msgcount		minix-sys
+./usr/tests/minix-posix/test_msginit		minix-sys
+./usr/tests/minix-posix/test_nicerto		minix-sys
 ./usr/tests/usr.bin/jot/Atffile		minix-sys	atf
 ./usr/tests/usr.bin/jot/d_basic.out	minix-sys	atf
 ./usr/tests/usr.bin/jot/t_jot		minix-sys	atf

@@ -136,3 +136,89 @@ message *m_ptr;
 
   rmp->mp_flags |= VFS_CALL;
 }
+
+
+/***************************************
+ * CS 551 Additions
+ ***************************************/
+
+
+/*
+ * Function: do_nicer_to
+ *
+ * Abstract: Performs PM-server-level tasks for the nicerTo() system call.
+ *
+ * Input: Message of type mess_lc_pm_nicer_to, with two data types passed:
+ *          - int who: the PID of the process to be changed
+ *          - int prio: the priority value amount to change
+ *
+ * Returns: OK on success, or some negative value on failure.
+ */
+int do_nicer_to()
+{
+	int retval;
+	struct mproc *rmp;
+
+    int curr_nice;
+    int new_nice;
+
+    int arg_who;
+    int arg_pri;
+
+	arg_who = m_in.m_lc_pm_nicer_to.who;
+	arg_pri = m_in.m_lc_pm_nicer_to.prio;
+
+    printf("In PM server do_nicer_to()\n");
+
+	if (arg_who == 0)
+    {
+		rmp = mp;
+    }
+	else
+    {
+		if ((rmp = find_proc(arg_who)) == NULL)
+        {
+			return(ESRCH);
+        }
+    }
+
+	if (mp->mp_effuid != SUPER_USER
+        && mp->mp_effuid != rmp->mp_effuid
+        && mp->mp_effuid != rmp->mp_realuid)
+    {
+		return EPERM;
+    }
+
+	/* Only root is allowed to reduce the nice level. */
+	if (arg_pri < 0 && mp->mp_effuid != SUPER_USER)
+    {
+		return(EACCES);
+    }
+	
+	/* Ensure that the new value is within the allowed priority range. */
+    curr_nice = rmp->mp_nice;
+    new_nice = curr_nice + arg_pri;
+    if (new_nice < PRIO_MIN || new_nice > PRIO_MAX)
+    {
+		return(EINVAL);
+    }
+
+	/* 
+	 * The value passed in is currently between PRIO_MIN and PRIO_MAX.
+	 * We have to scale this between MIN_USER_Q and MAX_USER_Q to match
+	 * the kernel's scheduling queues.
+	 */
+
+	if ((retval = sched_nice(rmp, new_nice)) != OK)
+    {
+		return retval;
+	}
+
+	rmp->mp_nice = new_nice;
+
+    printf("Successfully set PID %u's priority from %d to %d\n", arg_who, curr_nice, new_nice);
+
+	return(OK);
+}
+
+/***************************************/

@@ -1,7 +1,6 @@
 /* This file defines constants for use in message communication (mostly)
  * between system processes.
- *
- * A number of protocol message request and response types are defined. For
+ * * A number of protocol message request and response types are defined. For
  * debugging purposes, each protocol is assigned its own unique number range.
  * The following such message type ranges have been allocated:
  *
@@ -263,8 +262,19 @@
 
 #  define SYS_PADCONF (KERNEL_CALL + 57)	/* sys_padconf() */
 
+
+/*
+ * CS 551 additions
+ */
+#  define SYS_TRAPCOUNT (KERNEL_CALL + 58)	/* sys_trapcount() */
+#  define SYS_TRAPINCR (KERNEL_CALL + 59)	/* sys_trapcount() */
+#  define SYS_TRAPINIT (KERNEL_CALL + 60)	/* sys_trapinit() */
+#  define SYS_MSGCOUNT (KERNEL_CALL + 61)	/* sys_msgcount() */
+#  define SYS_MSGINCR (KERNEL_CALL + 62)	/* sys_msgcount() */
+#  define SYS_MSGINIT (KERNEL_CALL + 63)	/* sys_msginit() */
+
 /* Total */
-#define NR_SYS_CALLS	58	/* number of kernel calls */
+#define NR_SYS_CALLS	64	/* number of kernel calls */
 
 #define SYS_CALL_MASK_SIZE BITMAP_CHUNKS(NR_SYS_CALLS)
 
